@@ -13,11 +13,7 @@ interface BearState {
 export const useChatStore = create<BearState>()((set) => ({
   chatBubbles: [
     {
-      text: 'Hello, I am a bear. I am here to help you learn about the fish in the Fraser River.',
-      type: ChatBubbleType.QUESTION,
-    },
-    {
-      text: 'What would you like to learn about?',
+      text: 'Cześć tutaj Financzeszka lalalalalala.',
       type: ChatBubbleType.ANSWER,
     },
   ],
@@ -78,7 +74,7 @@ export const useChatStore = create<BearState>()((set) => ({
         { name: 'Group A', value: 400 },
         { name: 'Group B', value: 300 },
         { name: 'Group C', value: 300 },
-        { name: 'Group D', value: 2100 },
+        { name: 'Group D', value: 100 },
       ],
     },
   ],

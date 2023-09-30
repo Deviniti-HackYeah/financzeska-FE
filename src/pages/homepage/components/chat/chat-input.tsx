@@ -25,8 +25,9 @@ export const ChatInput = ({ onAddBubble }: InnerProps) => {
   };
 
   return (
-    <div className="mt-auto">
+    <div className="mt-auto shadow-sm">
       <Input
+        className=""
         placeholder="Wpisz swoje pytanie..."
         value={question}
         onChange={(e) => setQuestion(e.target.value)}

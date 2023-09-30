@@ -1,6 +1,6 @@
 import { ResponsiveContainer, PieChart, Pie, Cell, Legend } from 'recharts';
 
-const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+const COLORS = ['#475569', '#f87171', '#38bdf8', '#a78bfa'];
 
 const RADIAN = Math.PI / 180;
 

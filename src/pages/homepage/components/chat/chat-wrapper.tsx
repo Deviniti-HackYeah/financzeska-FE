@@ -2,10 +2,10 @@ import { ChatBubble } from '@/pages/homepage/components/chat/chat-bubble';
 import { ChatInput } from '@/pages/homepage/components/chat/chat-input';
 import { useChatStore } from '@/shared/stores';
 import { FlashCardType } from '@/shared/enums';
-import { askQuestion } from '@/api/chat';
 import { IChatBubble } from '@/shared/types';
 import { useMutation } from 'react-query';
 import { useEffect, useRef } from 'react';
+import { askQuestion } from '@/api/chat';
 
 interface InnerProps {
   chatBubbles: IChatBubble[];
@@ -45,14 +45,14 @@ export const ChatWrapper = ({ chatBubbles, addChatBubble }: InnerProps) => {
   }, [chatBubbles.length]);
 
   return (
-    <div className="col-span-2 flex h-full flex-row overflow-auto">
+    <div className="col-span-2 flex h-full flex-row overflow-auto shadow-sm">
       <div className="flex h-full w-full flex-col rounded-md bg-white p-4">
-        <h1 className="mb-4 text-center text-xl font-semibold">
-          Cześć! Tu Financeszka!<br></br> Jak moge ci pomoc
-        </h1>
+        <div className="flex justify-center">
+          <img className="block h-[100px] w-[200px]" src="/assets/logo.png" />
+        </div>
 
         <div
-          className="mb-4 flex scroll-p-[24px] flex-col space-y-2 overflow-auto"
+          className="mb-4 flex scroll-p-[24px] flex-col space-y-4 overflow-auto"
           ref={bubblesRef}
         >
           {chatBubbles.map((bubble, index) => (
