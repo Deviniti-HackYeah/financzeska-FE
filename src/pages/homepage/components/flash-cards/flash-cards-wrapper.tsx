@@ -7,7 +7,7 @@ interface InnerProps {
 
 export const FlashCardsWrapper = ({ flashCards }: InnerProps) => {
   return (
-    <div className="col-span-3 grid h-fit grid-cols-2 gap-4">
+    <div className="col-span-3 grid h-full grid-cols-2 gap-4 overflow-auto">
       {flashCards.map((flashCard, idx) => (
         <FlashCard key={idx} {...flashCard} />
       ))}

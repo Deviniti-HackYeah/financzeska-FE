@@ -10,7 +10,6 @@ export const FlashCardMap = ({ latLang }: InnerProps) => {
 
   return (
     <div>
-      <h3>Skieruj się du urzedu na ulicy abc</h3>
       <div id="map" className="h-[200px]">
         <MapContainer
           scrollWheelZoom={false}

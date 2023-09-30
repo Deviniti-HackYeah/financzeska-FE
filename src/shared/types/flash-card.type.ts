@@ -6,4 +6,5 @@ export interface IFlashCard {
   chartData?: any;
   chartType?: ChartType;
   text: string;
+  title?: string;
 }

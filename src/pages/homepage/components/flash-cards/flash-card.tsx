@@ -6,16 +6,17 @@ import { LatLngExpression } from 'leaflet';
 import { cn } from '@/shared/utils';
 
 export const FlashCard = (props: IFlashCard) => {
-  const { text, type, latLang, chartData, chartType } = props;
+  const { text, title, type, latLang, chartData, chartType } = props;
 
   return (
     <div
-      className={cn('rounded-md bg-white p-2 min-h-[200px]', {
+      className={cn('rounded-md bg-white p-3 min-h-[200px]', {
         // 'bg-white': type === 'map',
         // 'bg-white': type === 'chart',
       })}
     >
-      <p dangerouslySetInnerHTML={{ __html: text }}></p>
+      <h4 className="mb-2 text-center text-lg font-medium">{title}</h4>
+      <p className="mb-2 text-sm" dangerouslySetInnerHTML={{ __html: text }}></p>
 
       {type === FlashCardType.MAP && (
         <FlashCardMap latLang={latLang as LatLngExpression} />

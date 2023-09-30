@@ -25,15 +25,18 @@ export const useChatStore = create<BearState>()((set) => ({
     {
       type: FlashCardType.MAP,
       latLang: [50.06785240422028, 19.991381368264097],
-      text: 'Tutaj fajny tekst',
+      text: 'Twoj urzad znajduje sie na ulicy: ul. Karmelicka 46 31-128 Kraków',
+      title: 'Miejsce urzedu'
     },
     {
       type: FlashCardType.TEXT,
       text: 'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.  lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. <a href="/">click me</a>',
+      title: 'Jak dostać odszkodowanie?'
     },
     {
       type: FlashCardType.CHART,
-      text: 'Wykres wynagrodzeń 2024',
+      text: 'Wykres przedstawia wynagrodzenia polaków w 2024 roku',
+      title: 'Wykres zarobkow polakow',
       chartType: ChartType.BAR,
       chartData: [
         {
@@ -68,7 +71,8 @@ export const useChatStore = create<BearState>()((set) => ({
     },
     {
       type: FlashCardType.CHART,
-      text: 'Wykres kolowy',
+      text: 'Na wykresie znajduje sie zuzycie wody w 2020 roku w Polsce',
+      title: 'Wykres zuzycia wody',
       chartType: ChartType.PIE,
       chartData: [
         { name: 'Group A', value: 400 },
