@@ -10,9 +10,9 @@ interface InnerProps {
 export const ChatBubble = ({ text, type }: InnerProps) => {
   return (
     <div
-      className={cn('rounded-lg px-4 py-4 text-white font-medium', {
+      className={cn('rounded-lg px-4 py-4 text-white font-medium w-fit', {
         'bg-red-400 rounded-tl-none': type === ChatBubbleType.ANSWER,
-        'bg-slate-200 rounded-br-none text-slate-600': type === ChatBubbleType.QUESTION,
+        'bg-slate-200 rounded-br-none text-slate-600 ml-auto': type === ChatBubbleType.QUESTION,
       })}
     >
       <TypeAnimation cursor={false} sequence={[text]} wrapper="p" speed={60} />

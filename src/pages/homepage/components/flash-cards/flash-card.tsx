@@ -10,7 +10,7 @@ export const FlashCard = (props: IFlashCard) => {
 
   return (
     <div
-      className={cn('rounded-md bg-white p-6 min-h-[200px] overflow-auto shadow-sm', {
+      className={cn('rounded-md bg-white p-6 min-h-[200px] overflow-auto shadow-sm max-h-[400px]', {
         // 'bg-white': type === 'map',
         // 'bg-white': type === 'chart',
       })}
