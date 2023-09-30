@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-100 text-firefly-950;
+  }
+}
+
+html {
+  font-family: 'Poppins', sans-serif;
+}
+
+a {
+  text-decoration: underline;
+}
