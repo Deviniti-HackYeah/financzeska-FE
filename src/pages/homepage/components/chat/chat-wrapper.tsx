@@ -1,5 +1,7 @@
 import { ChatBubble } from '@/pages/homepage/components/chat/chat-bubble';
 import { ChatInput } from '@/pages/homepage/components/chat/chat-input';
+import { useChatStore } from '@/shared/stores';
+import { FlashCardType } from '@/shared/enums';
 import { askQuestion } from '@/api/documents';
 import { IChatBubble } from '@/shared/types';
 import { useMutation } from 'react-query';
@@ -11,6 +13,7 @@ interface InnerProps {
 }
 
 export const ChatWrapper = ({ chatBubbles, addChatBubble }: InnerProps) => {
+  const { updateChatBubbles, updateFlashCards } = useChatStore();
   const bubblesRef = useRef<HTMLDivElement>(null);
 
   const questionMutation = useMutation({
@@ -19,7 +22,13 @@ export const ChatWrapper = ({ chatBubbles, addChatBubble }: InnerProps) => {
       return askQuestion({ question: data });
     },
     onSuccess: (data) => {
-      console.log(data);
+      console.log('data', data);
+      updateFlashCards([
+        {
+          text: 'hihihihi',
+          type: FlashCardType.TEXT,
+        },
+      ]);
     },
   });
 

@@ -6,7 +6,7 @@ import { LatLngExpression } from 'leaflet';
 import { cn } from '@/shared/utils';
 
 export const FlashCard = (props: IFlashCard) => {
-  const { text, type, latLang } = props;
+  const { text, type, latLang, chartData, chartType } = props;
 
   return (
     <div
@@ -20,7 +20,9 @@ export const FlashCard = (props: IFlashCard) => {
       {type === FlashCardType.MAP && (
         <FlashCardMap latLang={latLang as LatLngExpression} />
       )}
-      {type === FlashCardType.CHART && <FlashCardChart />}
+      {type === FlashCardType.CHART && chartType && (
+        <FlashCardChart chartData={chartData} chartType={chartType} />
+      )}
     </div>
   );
 };

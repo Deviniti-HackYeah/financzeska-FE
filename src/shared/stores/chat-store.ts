@@ -1,4 +1,4 @@
-import { ChatBubbleType, FlashCardType } from '@/shared/enums';
+import { ChartType, ChatBubbleType, FlashCardType } from '@/shared/enums';
 import { IFlashCard } from '@/shared/types/flash-card.type';
 import { IChatBubble } from '@/shared/types';
 import { create } from 'zustand';
@@ -34,6 +34,7 @@ export const useChatStore = create<BearState>()((set) => ({
     {
       type: FlashCardType.CHART,
       text: 'Wykres wynagrodzeń 2024',
+      chartType: ChartType.BAR,
       chartData: [
         {
           name: 'Page A',
@@ -63,6 +64,17 @@ export const useChatStore = create<BearState>()((set) => ({
           name: 'Page G',
           pv: 4300,
         },
+      ],
+    },
+    {
+      type: FlashCardType.CHART,
+      text: 'Wykres kolowy',
+      chartType: ChartType.PIE,
+      chartData: [
+        { name: 'Group A', value: 400 },
+        { name: 'Group B', value: 300 },
+        { name: 'Group C', value: 300 },
+        { name: 'Group D', value: 2100 },
       ],
     },
   ],
