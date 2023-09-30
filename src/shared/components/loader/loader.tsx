@@ -5,7 +5,7 @@ export const Loader = ({
   size = 'standard',
 }: {
   inline?: boolean;
-  size?: 'small' | 'standard';
+  size?: 'small' | 'standard' | 'large';
 }) => {
   return (
     <div
@@ -25,6 +25,7 @@ export const Loader = ({
             'inline h-10 w-10 animate-spin fill-firefly-950 text-gray-200 dark:text-gray-600',
             {
               ['h-6 w-6']: size === 'small',
+              ['h-12 w-12']: size === 'large',
             },
           )}
           xmlns="http://www.w3.org/2000/svg"
