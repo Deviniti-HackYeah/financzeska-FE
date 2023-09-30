@@ -13,7 +13,7 @@ interface InnerProps {
 }
 
 export const ChatWrapper = ({ chatBubbles, addChatBubble }: InnerProps) => {
-  const { updateChatBubbles, updateFlashCards } = useChatStore();
+  const { updateFlashCards } = useChatStore();
   const bubblesRef = useRef<HTMLDivElement>(null);
 
   const questionMutation = useMutation({

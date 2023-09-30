@@ -42,11 +42,11 @@ export const ChartPie = ({ data }: { data: any }) => {
           fill="#8884d8"
           dataKey="value"
         >
-          {data.map((entry, index) => (
+          {data.map((_entry: string, index: number) => (
             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
           ))}
         </Pie>
-        <Legend verticalAlign="top" height={36}/>
+        <Legend verticalAlign="top" height={36} />
       </PieChart>
     </ResponsiveContainer>
   );

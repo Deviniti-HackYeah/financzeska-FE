@@ -10,11 +10,11 @@ interface InnerProps {
 export const FlashCardChart = ({ chartData, chartType }: InnerProps) => {
   return (
     <div className="h-full max-h-[400px]">
-        {chartType === ChartType.BAR ? (
-          <ChartBar data={chartData} />
-        ) : (
-          <ChartPie data={chartData} />
-        )}
+      {chartType === ChartType.BAR ? (
+        <ChartBar data={chartData} />
+      ) : (
+        <ChartPie data={chartData} />
+      )}
     </div>
   );
 };

@@ -4,6 +4,6 @@ export interface IFlashCard {
   latLang?: [number, number];
   type: FlashCardType;
   chartData?: any;
-  chartType?: ChartType
+  chartType?: ChartType;
   text: string;
 }
