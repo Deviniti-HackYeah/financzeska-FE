@@ -1,6 +1,7 @@
 import { ChatBubbleType } from '@/shared/enums';
 import { IChatBubble } from '@/shared/types';
 import { Input } from '@/shared/components';
+import { MicIcon } from 'lucide-react';
 import { useState } from 'react';
 
 interface InnerProps {
@@ -25,14 +26,14 @@ export const ChatInput = ({ onAddBubble }: InnerProps) => {
   };
 
   return (
-    <div className="mt-auto shadow-sm">
+    <div className="mt-auto flex items-center justify-center">
       <Input
-        className=""
         placeholder="Wpisz swoje pytanie..."
         value={question}
         onChange={(e) => setQuestion(e.target.value)}
         onKeyDown={(e) => handleKeyDown(e)}
       />
+      <MicIcon className="ml-2 cursor-pointer" />
     </div>
   );
 };
