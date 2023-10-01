@@ -4,3 +4,5 @@ export * from './input/input';
 export * from './label/label';
 export * from './loader/loader';
 export * from './select/select';
+export * from './dialog/dialog';
+export * from './toast/toast';

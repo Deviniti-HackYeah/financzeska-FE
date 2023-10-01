@@ -1,4 +1,5 @@
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { Toaster } from '@/shared/components/toast/toaster';
 import { RouterProvider } from 'react-router-dom';
 import { router } from './core/router/router';
 import { Suspense } from 'react';
@@ -11,6 +12,7 @@ function App() {
     <Suspense fallback={<div>Loading...</div>}>
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />
+        <Toaster />
       </QueryClientProvider>
     </Suspense>
   );

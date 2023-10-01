@@ -1,6 +1,19 @@
+import {
+  Button,
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/shared/components';
 import { ChatWrapper, FlashCardsWrapper } from '@/pages/homepage/components';
+import { useToast } from '@/shared/components/toast/use-toast';
 import { useChatStore } from '@/shared/stores/chat-store';
+import { DialogClose } from '@radix-ui/react-dialog';
 import { getChatData } from '@/api/chat';
+import { MailIcon } from 'lucide-react';
 import { useQuery } from 'react-query';
 import { useEffect } from 'react';
 
@@ -13,6 +26,7 @@ export const Homepage = () => {
     setUseTyper,
   } = useChatStore();
   const { data } = useQuery('chatDBDat', getChatData);
+  const { toast } = useToast();
 
   useEffect(() => {
     if (data) {
@@ -42,7 +56,41 @@ export const Homepage = () => {
         )}
       </div>
 
-      <div className="fixed bottom-4 right-6"></div>
+      <Dialog>
+        <DialogTrigger>
+          <div className="fixed bottom-4 right-6 cursor-pointer rounded-full bg-indigo-500 p-6 shadow-lg">
+            <MailIcon className="text-white" />
+          </div>
+        </DialogTrigger>
+        <DialogContent className="bg-white">
+          <DialogHeader>
+            <DialogTitle>Otrzymuj powiadomienia</DialogTitle>
+            <DialogDescription>
+              Czy chcesz otrzymywać powiadomienia e-mail o o nadchodzących
+              wydarzeniach?
+            </DialogDescription>
+            <DialogFooter>
+              <DialogClose asChild>
+                <Button
+                  onClick={() => {
+                    toast({
+                      title: 'Gotowe!',
+                      description:
+                        'Od teraz będziesz otrzymywać powiadomienia o nadchodzących wydarzeniach',
+                      duration: 5000,
+                    });
+                  }}
+                >
+                  Tak
+                </Button>
+              </DialogClose>
+              <DialogClose asChild>
+                <Button>Anuluj</Button>
+              </DialogClose>
+            </DialogFooter>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
