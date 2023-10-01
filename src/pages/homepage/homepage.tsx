@@ -26,12 +26,19 @@ export const Homepage = () => {
     setUseTyper,
   } = useChatStore();
   const { data } = useQuery('chatDBDat', getChatData);
+
   const { toast } = useToast();
 
   useEffect(() => {
     if (data) {
-      updateChatBubbles(data.chatBubbles);
-      updateFlashCards(data.flashCards);
+      if (data.chatBubbles) {
+        updateChatBubbles(data.chatBubbles);
+      }
+
+      if (data.flashCards) {
+        updateFlashCards(data.flashCards);
+      }
+
       setUseTyper(false);
     }
   }, [data]);
@@ -58,7 +65,7 @@ export const Homepage = () => {
 
       <Dialog>
         <DialogTrigger>
-          <div className="fixed bottom-4 right-6 cursor-pointer rounded-full bg-indigo-500 p-6 shadow-lg">
+          <div className="fixed bottom-4 right-6 cursor-pointer rounded-full bg-indigo-500 p-6 shadow-lg hover:scale-105">
             <MailIcon className="text-white" />
           </div>
         </DialogTrigger>

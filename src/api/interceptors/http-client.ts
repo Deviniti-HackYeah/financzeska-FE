@@ -1,12 +1,13 @@
 import axios from 'axios';
 
 export const httpClient = axios.create({
-  baseURL: 'http://localhost:3000',
+  baseURL: 'http://38.242.133.226:8080/',
 });
 
 httpClient.interceptors.request.use(
   (config) => {
-    const token = 'testToken';
+    const token =
+      'eyJhbGciOiJIUzI1NiIsImxvZ2luIjoidGVzdCIsInJvbGUiOiJhZG1pbiJ9.e30.TQNZ_11jhK7lx6Q1kI-SUATthbATIU7CnNufoUVJnEU';
     config.headers['Authorization'] = 'Bearer ' + token;
     return config;
   },
