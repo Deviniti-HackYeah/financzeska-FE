@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const httpClient = axios.create({
-  baseURL: import.meta.env.VITE_API_URL,
+  baseURL: 'http://localhost:3000',
 });
 
 httpClient.interceptors.request.use(
@@ -12,5 +12,14 @@ httpClient.interceptors.request.use(
   },
   (error) => {
     Promise.reject(error);
+  },
+);
+
+httpClient.interceptors.response.use(
+  (response) => {
+    return response.data;
+  },
+  (error) => {
+    return Promise.reject(error);
   },
 );

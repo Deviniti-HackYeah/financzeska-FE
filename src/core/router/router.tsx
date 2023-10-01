@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { Homepage } from '@/pages/homepage/homepage';
+import { GovLogin } from '@/pages/gov/gov-login';
 import { Routes } from '@/shared/enums';
-import { GovLogin } from "@/pages/gov/gov-login";
 
 export const router = createBrowserRouter([
   {

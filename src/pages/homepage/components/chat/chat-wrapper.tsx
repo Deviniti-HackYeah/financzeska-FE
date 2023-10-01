@@ -9,11 +9,11 @@ import { askQuestion } from '@/api/chat';
 
 interface InnerProps {
   chatBubbles: IChatBubble[];
-  addChatBubble: (bubble: IChatBubble) => void;
+  addChatBubble: (bubble: IChatBubble[]) => void;
 }
 
 export const ChatWrapper = ({ chatBubbles, addChatBubble }: InnerProps) => {
-  const { updateFlashCards } = useChatStore();
+  const { updateFlashCards, useTyper, setUseTyper } = useChatStore();
   const bubblesRef = useRef<HTMLDivElement>(null);
 
   const questionMutation = useMutation({
@@ -33,7 +33,8 @@ export const ChatWrapper = ({ chatBubbles, addChatBubble }: InnerProps) => {
   });
 
   const handleBubbleAdd = (bubble: IChatBubble) => {
-    addChatBubble(bubble);
+    setUseTyper(true);
+    addChatBubble([bubble]);
     questionMutation.mutate(bubble.text);
   };
 
@@ -56,7 +57,12 @@ export const ChatWrapper = ({ chatBubbles, addChatBubble }: InnerProps) => {
           ref={bubblesRef}
         >
           {chatBubbles.map((bubble, index) => (
-            <ChatBubble key={index} type={bubble.type} text={bubble.text} />
+            <ChatBubble
+              key={index}
+              type={bubble.type}
+              text={bubble.text}
+              useTyper={useTyper}
+            />
           ))}
         </div>
 

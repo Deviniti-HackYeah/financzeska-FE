@@ -1,8 +1,26 @@
 import { ChatWrapper, FlashCardsWrapper } from '@/pages/homepage/components';
 import { useChatStore } from '@/shared/stores/chat-store';
+import { getChatData } from '@/api/chat';
+import { useQuery } from 'react-query';
+import { useEffect } from 'react';
 
 export const Homepage = () => {
-  const { chatBubbles, updateChatBubbles, flashCards } = useChatStore();
+  const {
+    chatBubbles,
+    updateChatBubbles,
+    flashCards,
+    updateFlashCards,
+    setUseTyper,
+  } = useChatStore();
+  const { data } = useQuery('chatDBDat', getChatData);
+
+  useEffect(() => {
+    if (data) {
+      updateChatBubbles(data.chatBubbles);
+      updateFlashCards(data.flashCards);
+      setUseTyper(false);
+    }
+  }, [data]);
 
   return (
     <div className="h-full w-full bg-slate-200 p-6">

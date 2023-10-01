@@ -1,7 +1,7 @@
-import { IChatBubble } from "@/shared/types";
-import { IFlashCard } from "@/shared/types/flash-card.type";
+import { IFlashCard } from '@/shared/types/flash-card.type';
+import { IChatBubble } from '@/shared/types';
 
 export interface ChatDataResponse {
   flashCards: IFlashCard[];
-  bubble: IChatBubble;
+  chatBubbles: IChatBubble[];
 }

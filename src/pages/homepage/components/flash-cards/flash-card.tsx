@@ -10,10 +10,13 @@ export const FlashCard = (props: IFlashCard) => {
 
   return (
     <div
-      className={cn('rounded-md bg-white p-6 min-h-[200px] overflow-auto shadow-sm max-h-[400px]', {
-        // 'bg-white': type === 'map',
-        // 'bg-white': type === 'chart',
-      })}
+      className={cn(
+        'rounded-md bg-white p-6 min-h-[200px] overflow-auto shadow-sm max-h-[400px]',
+        {
+          // 'bg-white': type === 'map',
+          // 'bg-white': type === 'chart',
+        },
+      )}
     >
       <h4 className="mb-2 text-lg font-medium">{title}</h4>
       <p
