@@ -71,10 +71,9 @@ export const Homepage = () => {
         </DialogTrigger>
         <DialogContent className="bg-white">
           <DialogHeader>
-            <DialogTitle>Otrzymuj powiadomienia</DialogTitle>
+            <DialogTitle>Zapisz rozmowę</DialogTitle>
             <DialogDescription>
-              Czy chcesz otrzymywać powiadomienia e-mail o o nadchodzących
-              wydarzeniach?
+              Czy chcesz otrzymać zapisaną rozmowę na swoją skrzynkę e-mail?
             </DialogDescription>
             <DialogFooter>
               <DialogClose asChild>
@@ -82,8 +81,7 @@ export const Homepage = () => {
                   onClick={() => {
                     toast({
                       title: 'Gotowe!',
-                      description:
-                        'Od teraz będziesz otrzymywać powiadomienia o nadchodzących wydarzeniach',
+                      description: 'Zapis rozmowy już jest na Twoim mailu!',
                       duration: 5000,
                     });
                   }}

@@ -15,7 +15,7 @@ interface BearState {
 export const useChatStore = create<BearState>()((set) => ({
   chatBubbles: [
     {
-      text: 'Cześć, Jan! Jestem Franczeska, twoja wirtualna asystentka. Jak mogę ci pomóc?',
+      text: 'Cześć, Jan! Tu Financzeska, Twoja prywatna przewodnika po świecie regulacji finansowych, ekonomicznych i podatkowych. W czym mogę Ci dzisiaj pomóc?',
       type: ChatBubbleType.ANSWER,
     },
   ],
