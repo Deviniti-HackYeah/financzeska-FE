@@ -7,6 +7,6 @@ export async function getChatData(): Promise<ChatDataResponse> {
 
 export async function askQuestion(params: {
   question: string;
-}): Promise<ChatDataResponse> {
-  return httpClient.post('/question', { ...params });
+}): Promise<any> {
+  return httpClient.post('/chat', { dataid: '', message: params.question });
 }

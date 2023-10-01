@@ -1,7 +1,7 @@
 import { ChatBubble } from '@/pages/homepage/components/chat/chat-bubble';
 import { ChatInput } from '@/pages/homepage/components/chat/chat-input';
 import { useChatStore } from '@/shared/stores';
-import { FlashCardType } from '@/shared/enums';
+import { ChatBubbleType, FlashCardType } from '@/shared/enums';
 import { IChatBubble } from '@/shared/types';
 import { useMutation } from 'react-query';
 import { useEffect, useRef } from 'react';
@@ -22,7 +22,10 @@ export const ChatWrapper = ({ chatBubbles, addChatBubble }: InnerProps) => {
       return askQuestion({ question: data });
     },
     onSuccess: (data) => {
-      console.log('data', data);
+      addChatBubble([{
+        text: data.chats[0].message,
+        type: ChatBubbleType.ANSWER
+      }])
       updateFlashCards([
         {
           text: 'hihihihi',
