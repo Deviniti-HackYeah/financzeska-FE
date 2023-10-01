@@ -7,9 +7,6 @@ export const httpClient = axios.create({
 
 httpClient.interceptors.request.use(
   (config) => {
-    const token =
-      'eyJhbGciOiJIUzI1NiIsImxvZ2luIjoidGVzdCIsInJvbGUiOiJhZG1pbiJ9.e30.TQNZ_11jhK7lx6Q1kI-SUATthbATIU7CnNufoUVJnEU';
-    config.headers['Authorization'] = 'Bearer ' + token;
     return config;
   },
   (error) => {
