@@ -42,7 +42,7 @@ export const ChatWrapper = ({ chatBubbles, addChatBubble }: InnerProps) => {
     setTimeout(() => {
       if (!bubblesRef.current) return;
       bubblesRef.current.scrollTop = bubblesRef.current.scrollHeight;
-    }, 0);
+    }, 1500);
   }, [chatBubbles.length]);
 
   return (

@@ -28,7 +28,7 @@ export const ChartBar = ({ data }: { data: any }) => {
         <YAxis />
         <Tooltip />
         <Legend />
-        <Bar dataKey="pv" fill="#f87171" />
+        <Bar dataKey="kwota" fill="#f87171" />
       </BarChart>
     </ResponsiveContainer>
   );
